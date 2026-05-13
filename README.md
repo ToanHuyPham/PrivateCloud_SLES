@@ -1,9 +1,5 @@
 # Private Cloud Simple 3-Site
 
-Mô hình **Private Cloud đơn giản, dễ hiểu, phù hợp cho 1 người triển khai**.
-
-Công nghệ:
-
 - SLES 12 SP5
 - KVM / libvirt
 - NFS
@@ -13,50 +9,7 @@ Công nghệ:
 
 ---
 
-## Mục tiêu
-
-Triển khai một hệ thống private cloud nhỏ có thể:
-
-- Chạy máy ảo bằng KVM/libvirt.
-- Lưu ISO/template/backup bằng NFS.
-- Tạo disk VM replicate giữa 3 server bằng LINSTOR/DRBD.
-- Failover VM thủ công khi một server lỗi.
-- Dễ hiểu, dễ vận hành, không quá phức tạp.
-
----
-
-## Triết lý triển khai
-
-Vì chỉ **1 người triển khai**, mô hình sẽ chia làm 2 giai đoạn:
-
-### Giai đoạn 1: MVP chạy ổn định
-
-```text
-Có VM
-Có replicated storage
-Có NFS lưu ISO/template/backup
-Có manual failover
-Có backup config
-Có monitoring/check thủ công
-```
-
-### Giai đoạn 2: Nâng cấp HA sau
-
-```text
-Pacemaker
-Corosync
-VIP
-STONITH/Fencing
-Auto failover
-Monitoring tự động
-Backup offsite tự động
-```
-
-> Không nên triển khai HA phức tạp ngay từ đầu nếu chưa đủ thời gian test. Làm MVP trước, hiểu rõ từng phần, sau đó mới nâng cấp.
-
----
-
-## Mô hình đơn giản
+## Mô hình
 
 ```mermaid
 flowchart LR
